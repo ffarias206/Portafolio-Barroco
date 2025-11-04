@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Literatura del Barroco — Portada</title>
+  <meta name="description" content="Portada del proyecto: Literatura del Barroco. Acceso a Actividades." />
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+  <style>
+    :root{
+      --bg:#3b2728; --bg2:#2a1b1d;
+      --card:#9f7c5d; --text:#f3e4b4; --lead:#bfae8c;
+      --cardText:#2b1f16; --accent:#d4a373; --accent-strong:#c48a4f;
+      --stroke:#f1e2b8; --gold:#d9b26e; --gold-deep:#b78a41;
+      --shadow:0 20px 40px rgba(0,0,0,.35);
+      --space-xl:96px; --space-lg:56px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family:"Cormorant Garamond",serif; color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 10% 10%, rgba(212,163,115,.07), transparent 60%),
+        radial-gradient(1000px 700px at 90% 20%, rgba(212,163,115,.06), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      line-height:1.55;
+    }
+
+    /* NAV */
+    nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(6px);
+      background:linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.25));
+      border-bottom:1px solid rgba(241,226,184,.25);}
+    .nav-inner{max-width:1100px; margin:0 auto; padding:10px 20px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;}
+    .brand__title{font-family:"Cinzel Decorative",serif; font-size:clamp(22px,3.4vw,34px);
+      color:var(--accent); text-shadow:0 2px 0 rgba(0,0,0,.35); margin:0;}
+    .nav-links{display:flex; gap:14px; flex-wrap:wrap;}
+    .nav-links a{color:var(--text); text-decoration:none; padding:6px 10px; border-radius:10px; border:1px solid transparent; font-weight:600;}
+    .nav-links a:hover{border-color:rgba(241,226,184,.35)}
+    .nav-links a.active{background:linear-gradient(180deg,var(--gold),var(--gold-deep)); color:#1d140c; border-color:var(--gold-deep); box-shadow:0 6px 16px rgba(183,138,65,.25)}
+
+    /* SECCIONES */
+    .container{max-width:1100px; margin:0 auto; padding:0 20px}
+    .section{padding-top:var(--space-xl); padding-bottom:var(--space-xl);}
+    .title{font-family:"Cinzel Decorative",serif; font-size:clamp(38px,6vw,64px); color:var(--accent); text-align:center; margin:0; text-shadow:0 2px 0 rgba(0,0,0,.35)}
+    .lead{max-width:900px; margin:12px auto 0; text-align:center; color:var(--lead); font-size:clamp(16px,1.6vw,19px)}
+
+    /* Cards/Actividades */
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:24px}
+    .card{grid-column:span 12; background:var(--card); border:2px solid var(--stroke); border-radius:20px;
+      padding:clamp(18px,2.5vw,26px); box-shadow:0 10px 30px rgba(0,0,0,.25); text-align:center;
+      transition:transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform:translateY(-3px) rotateX(.6deg); box-shadow:var(--shadow)}
+    @media (min-width:760px){.card{grid-column:span 6}}
+
+    .card h2{font-family:"Cinzel Decorative",serif; margin:0 0 10px; font-size:clamp(20px,2.2vw,26px); color:#2e2017}
+    .card p{margin:0 0 16px; color:var(--cardText); font-weight:700}
+
+    .actions{display:flex; justify-content:center; gap:12px}
+    .btn{appearance:none; border:1px solid var(--accent-strong);
+      background:linear-gradient(180deg,var(--accent),var(--accent-strong));
+      color:#1a130c; padding:10px 16px; border-radius:12px; font-weight:700;
+      text-decoration:none; box-shadow:0 6px 18px rgba(212,163,115,.25)}
+    .btn:active{transform:translateY(1px)}
+
+    /* Intro box en Inicio */
+    .intro-card{
+      background:#efe2c2; color:#3a2a1f;
+      border:2px dashed rgba(58,42,31,.35);
+      border-radius:14px; padding:18px;
+      max-width:900px; margin:22px auto 0; line-height:1.6;
+    }
+
+    /* Equipo */
+    .team{display:flex; justify-content:space-between; gap:16px}
+    .team-card{max-width:30%; background:#f7edd2; color:#2e231a; border:2px solid var(--stroke);
+      border-radius:12px; padding:16px; text-align:center}
+    .team-card img{width:100%; border-radius:50%; margin-bottom:10px; border:2px solid var(--stroke)}
+    .team-card .name{font-weight:700; color:#3a2a1f}
+
+    /* Back to top */
+    #toTop{position:fixed; right:16px; bottom:16px; z-index:60; opacity:0; pointer-events:none;
+      transition:opacity .2s ease, transform .2s ease; transform:translateY(8px)}
+    #toTop.show{opacity:1; transform:translateY(0); pointer-events:auto}
+    #toTop .btn{border-radius:999px; padding:8px 12px}
+
+    :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+    @media print{
+      nav,#toTop{display:none!important}
+      body{background:#fff; color:#000}
+      .card{box-shadow:none; border-color:#ccc; background:#fff}
+      a{color:#000; text-decoration:underline}
+      .section{padding:24px 0}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav aria-label="Navegación principal">
+    <div class="nav-inner">
+      <h1 class="brand__title">Literatura del Barroco</h1>
+      <div class="nav-links">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#actividades">Actividades</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#creditos">Créditos</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INICIO -->
+  <section id="inicio" class="section">
+    <div class="container" data-aos="fade-up">
+      <h2 class="title">Portada del Proyecto</h2>
+      <p class="lead">Presentación general del trabajo.</p>
+
+      <!-- ESPACIO PARA INTRODUCCIÓN (para pegar texto) -->
+      <div class="intro-card" contenteditable="false">
+        <!-- Pegá aquí tu introducción general -->
+        <p>(Escribí/pegá tu introducción: propósito del sitio, autores a trabajar, criterios y objetivos.)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVIDADES -->
+  <section id="actividades" class="section">
+    <div class="container">
+      <h2 class="title" style="font-size:clamp(28px,4.8vw,48px)" data-aos="fade-up">Actividades</h2>
+
+      <div class="grid">
+        <!-- Actividad 1 -->
+        <article class="card" data-aos="fade-up">
+          <h2>Actividad 1 · Análisis de textos barrocos</h2>
+          <p>Espacio de análisis con capturas de anotaciones, citas y explicación de recursos (conceptismo, culteranismo, hipérbaton, antítesis, metáforas).</p>
+          <div class="actions">
+            <a class="btn" href="actividad1.html" aria-label="Abrir Actividad 1">Abrir Actividad 1</a>
+          </div>
+        </article>
+
+        <!-- Actividad 2 -->
+        <article class="card" data-aos="fade-up" data-aos-delay="120">
+          <h2>Actividad 2 · Video + ensayo y escrito final</h2>
+          <p>Incluye bloque de introducción y ensayo, espacio para embeber el video y un cierre reflexivo (~300 palabras).</p>
+          <div class="actions">
+            <a class="btn" href="actividad2.html" aria-label="Abrir Actividad 2">Abrir Actividad 2</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="section">
+    <div class="container">
+      <h2 class="title" style="font-size:clamp(28px,4vw,44px)" data-aos="fade-up">Equipo</h2>
+      <div class="team" data-aos="fade-up" data-aos-delay="80">
+        <div class="team-card">
+          <img src="ff.jpg" loading="lazy" alt="Foto de Francisco Farias">
+          <div class="name">Francisco Farias</div>
+        </div>
+        <div class="team-card">
+          <img src="lb.jpg" loading="lazy" alt="Foto de Luana Isabella Beltarmone">
+          <div class="name">Luana Isabella Beltarmone</div>
+        </div>
+        <div class="team-card">
+          <img src="gf.jpg" loading="lazy" alt="Foto de Gonzalo Ferrero">
+          <div class="name">Gonzalo Ferrero</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRÉDITOS -->
+  <section id="creditos" class="section">
+    <div class="container">
+      <h2 class="title" style="font-size:clamp(24px,3.6vw,38px)" data-aos="fade-up">Créditos</h2>
+      <p class="lead" data-aos="fade-up" data-aos-delay="80">
+        Sitio escolar con estética barroca. Tipografías: Cinzel Decorative & Cormorant Garamond. Animaciones con AOS.
+      </p>
+    </div>
+  </section>
+
+  <!-- Back to top -->
+  <div id="toTop"><a class="btn" href="#inicio" aria-label="Volver arriba">↑</a></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!prefersReduced){ AOS.init({ once:true, duration:700, easing:'ease-out-cubic' }); }
+
+    // Scrollspy simple
+    const sections = ['inicio','actividades','equipo','creditos'].map(id=>document.getElementById(id));
+    const links = [...document.querySelectorAll('.nav-links a')];
+    const byHash = (h)=> links.find(a => a.getAttribute('href') === '#'+h);
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          links.forEach(a=>a.classList.remove('active'));
+          const l = byHash(e.target.id); if(l) l.classList.add('active');
+        }
+      });
+    }, { rootMargin:'-40% 0px -55% 0px', threshold:0 });
+    sections.forEach(s=> io.observe(s));
+
+    // botón back-to-top
+    const toTop = document.getElementById('toTop');
+    const showTop = () => { window.scrollY > 400 ? toTop.classList.add('show') : toTop.classList.remove('show'); };
+    showTop(); window.addEventListener('scroll', showTop, { passive:true });
+  </script>
+</body>
+</html>

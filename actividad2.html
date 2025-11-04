@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Actividad 2 — Literatura del Barroco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<style>
+  :root{
+    --bg:#3b2728; --bg2:#2a1b1d;
+    --card:#9f7c5d; --text:#f3e4b4; --lead:#bfae8c;
+    --ink:#2b1f16; --accent:#d4a373; --accent-strong:#c48a4f;
+    --stroke:#f1e2b8; --gold:#d9b26e; --gold-deep:#b78a41;
+    --shadow:0 20px 40px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; font-family:"Cormorant Garamond",serif; color:var(--text);
+    background:
+      radial-gradient(1200px 800px at 10% 10%, rgba(212,163,115,.07), transparent 60%),
+      radial-gradient(1000px 700px at 90% 20%, rgba(212,163,115,.06), transparent 60%),
+      linear-gradient(180deg, var(--bg), var(--bg2));
+    line-height:1.55;
+    scroll-snap-type:y mandatory;
+    overscroll-behavior: contain;
+  }
+
+  .section{min-height:100vh; display:flex; align-items:center; padding:42px 20px; scroll-snap-align:start;}
+  .wrap{max-width:1100px; margin:0 auto; width:100%}
+
+  .page-title{
+    text-align:center; margin:0 0 14px;
+    font-family:"Cinzel Decorative",serif;
+    font-size:clamp(30px,5.6vw,58px); color:var(--accent);
+    text-shadow:0 2px 0 rgba(0,0,0,.35);
+  }
+  .lead{max-width:900px; margin:0 auto 16px; text-align:center; color:var(--lead); font-size:clamp(16px,1.6vw,19px)}
+
+  .card{background:var(--card); border:2px solid var(--stroke); border-radius:20px; padding:clamp(18px,2.5vw,26px); box-shadow:0 10px 30px rgba(0,0,0,.25); color:var(--ink)}
+  .card h2{font-family:"Cinzel Decorative",serif; margin:0 0 12px; color:#2e2017; font-size:clamp(22px,3vw,34px); text-align:center}
+
+  .text-area{min-height:170px;border:2px dashed rgba(58,42,31,.35);background:#f8efd7;border-radius:12px;padding:16px;color:#2e231a;line-height:1.6}
+  .embed-box{aspect-ratio:16/9; width:100%; border:2px dashed rgba(58,42,31,.35); border-radius:12px; display:grid; place-items:center; background:#f6ecd1; color:#3a2a1f; overflow:hidden}
+  .actions{display:flex; justify-content:center; gap:12px; margin-top:14px}
+  .btn{appearance:none; border:1px solid var(--accent-strong); background:linear-gradient(180deg,var(--accent),var(--accent-strong)); color:#1a130c; padding:10px 16px; border-radius:12px; font-weight:700; text-decoration:none; box-shadow:0 6px 18px rgba(212,163,115,.25)}
+
+  .hint{position:fixed; right:12px; bottom:12px; z-index:40; font-size:13px; color:#1d140c; background:linear-gradient(180deg,var(--gold),var(--gold-deep)); border:1px solid var(--gold-deep); padding:6px 10px; border-radius:10px; box-shadow:0 8px 16px rgba(0,0,0,.25)}
+
+  @media print{ .hint{display:none} .card{box-shadow:none; border-color:#ccc; background:#fff} body{background:#fff; color:#000} }
+</style>
+</head>
+<body>
+
+  <!-- 1) Intro -->
+  <section class="section" data-step="intro">
+    <div class="wrap" data-aos="fade-up">
+      <h1 class="page-title">TÍTULO DE LA ACTIVIDAD 2</h1>
+      <p class="lead">(Presentación breve del propósito general de esta actividad.)</p>
+
+      <article class="card">
+        <h2>Introducción</h2>
+        <div class="text-area"><p>(Pegá aquí el desarrollo introductorio: objetivos, fuentes, decisiones y rasgos barrocos.)</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 2) Ensayo -->
+  <section class="section" data-step="ensayo">
+    <div class="wrap" data-aos="fade-up">
+      <article class="card">
+        <h2>Ensayo escrito</h2>
+        <div class="text-area" style="min-height:220px"><p>(Pegá aquí tu ensayo: tesis, argumentos y citas.)</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3) Video -->
+  <section class="section" data-step="video">
+    <div class="wrap" data-aos="fade-up">
+      <article class="card">
+        <h2>Video de la actividad</h2>
+        <div class="embed-box">
+          <!-- <iframe src="TU_URL_EMBED" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen></iframe> -->
+          <small>Insertá tu <strong>iframe</strong> de YouTube/Drive/Canva.</small>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4) Escrito final -->
+  <section class="section" data-step="final">
+    <div class="wrap" data-aos="fade-up">
+      <article class="card">
+        <h2>Escrito final</h2>
+        <div class="text-area"><p>(~300 palabras: decisiones del video/ensayo, evidencias barrocas, aprendizajes y cierre.)</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 5) Botones de salida -->
+  <section class="section" data-step="salida">
+    <div class="wrap" data-aos="zoom-in">
+      <article class="card" style="text-align:center">
+        <h2>¿Qué querés hacer ahora?</h2>
+        <div class="actions">
+          <a class="btn" href="actividad1.html" aria-label="Ir a la Actividad 1">Ir a la Actividad 1 →</a>
+          <a class="btn" href="index.html#inicio" aria-label="Volver al inicio">Volver al inicio</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="hint" aria-hidden="true">Usá ↑ / ↓ para cambiar de sección</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!prefersReduced){ AOS.init({ once:true, duration:700, easing:'ease-out-cubic' }); }
+
+  const sections = Array.from(document.querySelectorAll('.section'));
+  let isJumping = false;
+  const idx = () => {
+    const y = window.scrollY + window.innerHeight/2;
+    let i = 0; sections.forEach((s,ix)=>{ if(s.offsetTop <= y) i = ix; }); return i;
+  };
+  const jumpTo = (i)=>{
+    if(i<0 || i>=sections.length) return;
+    isJumping = true;
+    sections[i].scrollIntoView({behavior:'smooth', block:'start'});
+    setTimeout(()=>{ isJumping = false; }, 700);
+  };
+  window.addEventListener('keydown', (e)=>{
+    const t = document.activeElement;
+    const typing = t && (t.tagName==='TEXTAREA'||t.tagName==='INPUT'||t.isContentEditable);
+    if(typing) return;
+    if(['ArrowDown','PageDown'].includes(e.key)){ e.preventDefault(); if(!isJumping) jumpTo(idx()+1); }
+    else if(['ArrowUp','PageUp'].includes(e.key)){ e.preventDefault(); if(!isJumping) jumpTo(idx()-1); }
+  }, {passive:false});
+</script>
+</body>
+</html>
