@@ -53,48 +53,197 @@
   .hint{position:fixed; right:12px; bottom:12px; z-index:40; font-size:13px; color:#1d140c; background:linear-gradient(180deg,var(--gold),var(--gold-deep)); border:1px solid var(--gold-deep); padding:6px 10px; border-radius:10px; box-shadow:0 8px 16px rgba(0,0,0,.25)}
 
   @media print{ .hint{display:none} .card{box-shadow:none; border-color:#ccc; background:#fff} body{background:#fff; color:#000} }
+
+/* Canva compacto */
+.embed-box.compact{
+  aspect-ratio: auto;   /* anula 16:9 */
+  height: 120px;        /* alto reducido */
+  padding: 0;           /* sin relleno extra */
+}
+
+
 </style>
+
+
 </head>
 <body>
 
   <!-- 1) Intro -->
   <section class="section" data-step="intro">
     <div class="wrap" data-aos="fade-up">
-      <h1 class="page-title">TÍTULO DE LA ACTIVIDAD 1</h1>
-      <p class="lead">(Breve explicación de qué trata esta actividad.)</p>
+      <h1 class="page-title"> Análisis Literario</h1>
+      <p class="lead"></p>
 
       <article class="card">
-        <h2>Introducción</h2>
-        <div class="text-area"><p>(Pegá tu introducción: contexto, objetivos y rasgos barrocos a observar.)</p></div>
+        <h2> Introducción</h2>
+        <div class="text-area"><p>En esta actividad analizaremos recursos propios del Barroco como la aliteración, hipérbaton, antítesis y otros a partir de “Hombres necios que acusáis” de Sor Juana. Identificaremos cada figura, daremos su definición general y explicaremos, de forma breve, cómo potencia el sentido y la musicalidad del poema.</p></div>
       </article>
     </div>
   </section>
 
-  <!-- 2) Presentación -->
-  <section class="section" data-step="presentacion">
+  <!-- 2) Cuadro de recursos literarios (AHORA ANTES DEL CANVA) -->
+<!-- 2) Cuadro de recursos literarios (Definiciones generales) -->
+<section class="section" data-step="cuadro">
+  <div class="wrap" data-aos="fade-up">
+    <article class="card">
+      <h2>Recursos literarios — Definiciones generales</h2>
+
+      <style>
+        /* Estilos del cuadro (scoped a esta tabla) */
+        .lit-table-wrapper{margin-top:10px}
+        .lit-table{
+          width:100%; border-collapse:separate; border-spacing:0;
+          background:#f8efd7; color:#2b1f16;
+          border:2px solid var(--stroke); border-radius:14px;
+          overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.08);
+        }
+        .lit-table th, .lit-table td{
+          padding:14px 16px; vertical-align:top; line-height:1.5;
+          border-bottom:1px solid rgba(58,42,31,.12);
+        }
+        .lit-table th{
+          background:linear-gradient(180deg,#f0e4c6,#e7d9b3);
+          font-family:"Cinzel Decorative", serif; font-size:1.05rem; color:#2e2017;
+          text-align:left;
+        }
+        .lit-table tr:last-child td{ border-bottom:none; }
+        .lit-table tbody tr:hover{ background:#efe2c2; }
+
+        .badge{
+          display:inline-block; padding:2px 8px; border:1px solid #b78a41;
+          background:linear-gradient(180deg,#d9b26e,#b78a41); color:#1d140c;
+          border-radius:999px; font-weight:700; font-size:.85rem;
+        }
+
+        @media (max-width:720px){
+          .lit-table thead{ display:none; }
+          .lit-table, .lit-table tbody, .lit-table tr, .lit-table td{ display:block; width:100%; }
+          .lit-table tr{ border-bottom:2px solid rgba(58,42,31,.12); }
+          .lit-table td{ border:none !important; padding:10px 14px; }
+          .lit-table td::before{
+            content:attr(data-label);
+            display:block; font-family:"Cinzel Decorative", serif; color:#4a351e; margin-bottom:4px;
+          }
+        }
+        
+      </style>
+
+      <div class="lit-table-wrapper">
+        <table class="lit-table" role="table" aria-label="Cuadro de recursos literarios">
+          <thead>
+            <tr>
+              <th scope="col">Recurso literario</th>
+              <th scope="col">Definición general</th>
+              <th scope="col">Ejemplo clásico</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Aliteración</span></td>
+              <td data-label="Definición">Repetición de sonidos iguales o semejantes para dar musicalidad, ritmo o énfasis.</td>
+              <td data-label="Ejemplo">“En el silencio solo se escuchaba el <em>susurro</em> de las abejas…”</td>
+            </tr>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Hipérbaton</span></td>
+              <td data-label="Definición">Alteración del orden lógico de las palabras para destacar un término o lograr efecto estético.</td>
+              <td data-label="Ejemplo">“Del salón en el ángulo oscuro…”</td>
+            </tr>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Metáfora</span></td>
+              <td data-label="Definición">Identificación entre dos realidades con rasgo común, sustituyendo una por otra para crear imagen poética.</td>
+              <td data-label="Ejemplo">“Las <em>perlas</em> de tu boca” (por los dientes).</td>
+            </tr>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Antítesis</span></td>
+              <td data-label="Definición">Contraposición de ideas o palabras opuestas para remarcar un contraste.</td>
+              <td data-label="Ejemplo">“Es tan <strong>corto</strong> el amor y tan <strong>largo</strong> el olvido.”</td>
+            </tr>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Ironía</span></td>
+              <td data-label="Definición">Decir lo contrario de lo que se quiere expresar para criticar, enfatizar o generar humor.</td>
+              <td data-label="Ejemplo">“¡Qué puntual!” (a quien llega tarde).</td>
+            </tr>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Hipérbole</span></td>
+              <td data-label="Definición">Exageración deliberada de la realidad para intensificar una idea o emoción.</td>
+              <td data-label="Ejemplo">“Te llamé <strong>mil veces</strong>.”</td>
+            </tr>
+            <tr>
+              <td data-label="Recurso"><span class="badge">Pregunta retórica + Retruécano</span></td>
+              <td data-label="Definición">
+                <strong>Pregunta retórica:</strong> interrogación que busca reflexión, no respuesta. <br>
+                <strong>Retruécano:</strong> inversión del orden de palabras para expresar un contraste ingenioso.
+              </td>
+              <td data-label="Ejemplo">“No es lo mismo <em>vivir para comer</em> que <em>comer para vivir</em>.”</td>
+            </tr>
+          <tr>
+             <td data-label="Recurso"><span class="badge">Redondilla</span></td>
+               <td data-label="Definición">
+                    Estrofa de cuatro versos octosílabos con rima consonante <strong>ABBA</strong>.
+                    Muy usada en el Barroco por su musicalidad y agilidad argumentativa.
+                </td>
+               <td data-label="Ejemplo">
+                    Sor Juana, <em>“Hombres necios que acusáis”</em> (redondillas, rima ABBA).
+               </td>
+            </tr>
+
+<tr>
+  <td data-label="Recurso"><span class="badge">Soneto</span></td>
+  <td data-label="Definición">
+    Poema de 14 versos endecasílabos: <strong>dos cuartetos</strong> y <strong>dos tercetos</strong>, rima
+    consonante (p. ej., <strong>ABBA ABBA CDC DCD</strong>). Propicio para temas amorosos,
+    filosóficos y descriptivos.
+  </td>
+  <td data-label="Ejemplo">
+    Góngora, <em>“Mientras por competir con tu cabello”</em> (soneto).
+  </td>
+</tr>
+
+          </tbody>
+        </table>
+      </div>
+
+     <!--  <div class="actions" style="margin-top:16px">
+        <a class="btn" href="#presentacion">Ir al canva</a>-->
+      </div>
+    </article>
+  </div>
+</section>
+
+
+  <!-- 3) Presentación -->
+  <section class="section" data-step="presentacion" id="presentacion">
     <div class="wrap" data-aos="fade-up">
       <article class="card">
-        <h2>Presentación / Canva</h2>
-        <div class="embed-box">
-          <!-- <iframe src="TU_URL_EMBED" width="100%" height="100%" frameborder="0" loading="lazy" allowfullscreen></iframe> -->
-          <small>Pegá aquí tu <strong>iframe</strong> de Canva/Slides/Drive.</small>
-        </div>
-        <div class="actions"><a class="btn" href="index.html#actividades">← Volver a Actividades</a></div>
+        <h2>Canva</h2>
+        <div class="embed-box compact">
+  <a
+    class="btn"
+    href="https://www.canva.com/design/DAG2EAttQ88/tBem4F1ZiZM6CaqeEi4Lpw/edit?utm_content=DAG2EAttQ88&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+    target="_blank" rel="noopener noreferrer"
+    aria-label="Abrir Actividad en Canva"
+  >
+    Abrir Actividad
+  </a>
+</div>
+
+
+       <!-- <div class="actions"><a class="btn" href="index.html#actividades">← Volver a Actividades</a></div>--> 
       </article>
     </div>
   </section>
 
-  <!-- 3) Bloque final -->
-  <section class="section" data-step="final">
+  <!-- 4) Bloque final -->
+  <section class="section" data-step="final" id="final">
     <div class="wrap" data-aos="fade-up">
       <article class="card">
-        <h2>Bloque final</h2>
+        <h2>Escrito</h2>
         <div class="text-area"><p>(Espacio para tu escrito final ~300 palabras o notas/citas con evidencias.)</p></div>
       </article>
     </div>
   </section>
 
-  <!-- 4) Botones de salida -->
+  <!-- 5) Botones de salida -->
   <section class="section" data-step="salida">
     <div class="wrap" data-aos="zoom-in">
       <article class="card" style="text-align:center">
